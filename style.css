@@ -1,0 +1,290 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background-color: #EAEAEA; /* Light greyish */
+    padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Adjusted space */
+}
+
+.logo img {
+    height: 40px; /* Slightly adjusted to match text proportion */
+    display: block;
+}
+
+.logo span {
+    font-size: 32px; /* Larger text */
+    font-weight: 500; /* Medium weight, not bold */
+    color: #000;
+    letter-spacing: -0.5px; /* Slight tightening */
+}
+
+nav ul {
+    display: flex;
+    gap: 40px;
+}
+
+nav a {
+    color: #333;
+    font-weight: 500;
+    font-size: 20px; /* Increased from 16px */
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #0056b3;
+}
+
+/* Hero Section */
+.hero {
+    height: 600px; /* Increased height */
+    background: url('img/Rectangle 2.png') center/cover no-repeat; /* Removed white overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center vertically */
+    position: relative;
+    text-align: center;
+}
+
+/* If user had the building image, we would use: 
+   background: url('path/to/image.jpg') center/cover no-repeat; */
+
+.hero-overlay h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #000;
+    margin-top: -50px; /* Slight offset upwards as in design */
+}
+
+/* About Section */
+.about {
+    background-color: #1B263B; /* Dark Blue */
+    color: #fff;
+    padding: 60px 0 80px;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+.about p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #E0E1DD;
+    text-align: center;
+}
+
+/* Common Section Styles (News, Articles, Analyze) */
+.section-gray {
+    background-color: #5C6F89; /* Slate Blue/Grey */
+    padding: 50px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 40px;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    justify-content: center;
+}
+
+/* Card Styles */
+.card {
+    background-color: #1B263B; /* Dark Blue matching About section */
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-image {
+    width: 100%;
+    height: 180px;
+    /* background-color: #8D99AE; Removed placeholder color */
+    border-radius: 8px;
+    margin-bottom: 20px;
+    background-size: cover; /* Changed back to cover as requested */
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Specific Card Content */
+.card-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-between; /* Ensures content is spaced out */
+}
+
+.card-content h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.card-content p {
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #E0E1DD;
+    /* Removed flex: 1 to prevent pushing button too far if not needed, 
+       but keeping it ensures buttons align if texts are different lengths 
+       AND we want button at absolute bottom. 
+       Let's use margin-top: auto on button instead. */
+    flex-grow: 1; 
+    text-align: center; 
+}
+
+/* Button */
+.btn {
+    display: inline-block;
+    background-color: #fff;
+    color: #000;
+    padding: 10px 30px;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    margin: 0 auto; /* Center horizontally */
+    margin-top: auto; /* Push to bottom */
+    transition: background-color 0.2s;
+}
+
+.btn:hover {
+    background-color: #f0f0f0;
+}
+
+/* Analyze Cards Specifics */
+/* Analyze cards in image have blue gradients or just backgrounds. 
+   They look similar to others but with just date and button. */
+.analyze-card .card-content h3 {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+/* Image Backgrounds */
+.news-img-1 { background-image: url('img/image 3.png'); }
+.news-img-2 { background-image: url('img/image 1.png'); }
+.news-img-3 { background-image: url('img/image 2.png'); }
+
+.article-img-1 { background-image: url('img/genz genm 1.png'); }
+.article-img-2 { background-image: url('img/2008 1.png'); }
+.article-img-3 { background-image: url('img/Picture 1.png'); }
+
+.analyze-img-1 { background-image: url('img/August 1.png'); }
+.analyze-img-2 { background-image: url('img/November 25.png'); }
+.analyze-img-3 { background-image: url('img/December 1.png'); }
+
+/* Footer */
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.social-icons a {
+    color: #fff; /* Icon color */
+    font-size: 24px;
+    /* If using images instead of FontAwesome */
+    display: inline-block;
+    width: 30px; 
+    height: 30px;
+    /* Placeholder for icon if font not loaded */
+    /* background-color: #555; border-radius: 50%; */ 
+}
+
+/* Font Awesome is loaded in HTML, so <i> tags will work. */
+.social-icons a i {
+    font-size: 28px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    nav ul {
+        gap: 20px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+}
